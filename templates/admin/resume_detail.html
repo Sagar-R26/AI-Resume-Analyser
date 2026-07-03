@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Resume #{{ resume.id }}{% endblock %}
+{% block content %}
+<div class="mb-3">
+    <a href="/admin/resumes" class="btn btn-outline-secondary">&larr; Back to Resumes</a>
+</div>
+
+<div class="card shadow">
+    <div class="card-header bg-dark text-light">
+        <h4 class="mb-0">Resume #{{ resume.id }} - {{ resume.filename }}</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-sm">
+                    <tr><th>Name</th><td>{{ resume.full_name or 'N/A' }}</td></tr>
+                    <tr><th>Email</th><td>{{ resume.email or 'N/A' }}</td></tr>
+                    <tr><th>Phone</th><td>{{ resume.phone or 'N/A' }}</td></tr>
+                    <tr><th>Location</th><td>{{ resume.location or 'N/A' }}</td></tr>
+                    <tr><th>Score</th><td><span class="badge bg-{{ 'success' if resume.score >= 70 else 'warning' if resume.score >= 50 else 'danger' }} fs-6">{{ resume.score }}</span></td></tr>
+                    <tr><th>Predicted Role</th><td>{{ resume.predicted_role or 'N/A' }}</td></tr>
+                    <tr><th>Experience</th><td>{{ resume.experience_years }} years</td></tr>
+                    <tr><th>Uploaded</th><td>{{ resume.uploaded_at }}</td></tr>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h6>Skills</h6>
+                <div class="d-flex flex-wrap gap-1 mb-3">
+                    {% for skill in (resume.skills or '').split(', ') %}
+                    {% if skill %}<span class="badge bg-primary">{{ skill }}</span>{% endif %}
+                    {% endfor %}
+                </div>
+                <h6>Suggested Skills</h6>
+                <div class="d-flex flex-wrap gap-1 mb-3">
+                    {% for sk in (resume.suggested_skills or '').split(', ') %}
+                    {% if sk %}<span class="badge bg-warning text-dark">{{ sk }}</span>{% endif %}
+                    {% endfor %}
+                </div>
+                <h6>Education</h6>
+                <p class="small">{{ resume.education or 'N/A' }}</p>
+            </div>
+        </div>
+        {% if resume.extracted_text %}
+        <hr>
+        <h6>Extracted Text <button class="btn btn-sm btn-outline-secondary" onclick="toggleText()">Toggle</button></h6>
+        <pre id="extractedText" class="bg-light p-3 rounded" style="max-height: 300px; overflow-y: auto; display: none; white-space: pre-wrap; font-size: 0.85rem;">{{ resume.extracted_text }}</pre>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+function toggleText() {
+    const el = document.getElementById('extractedText');
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+</script>
+{% endblock %}

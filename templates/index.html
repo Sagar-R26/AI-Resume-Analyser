@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}AI Resume Analyzer - Home{% endblock %}
+{% block content %}
+<div class="row align-items-center min-vh-75">
+    <div class="col-lg-6">
+        <h1 class="display-4 fw-bold">AI-Powered <span class="text-primary">Resume Analysis</span></h1>
+        <p class="lead mt-3">Upload your resume and let AI analyze it. Get instant feedback, skill suggestions, job role predictions, and personalized course recommendations.</p>
+        <div class="mt-4">
+            <a href="/upload" class="btn btn-primary btn-lg me-3"><i class="bi bi-cloud-upload"></i> Analyze Your Resume</a>
+            {% if not session.admin_logged_in %}
+            <a href="/admin/login" class="btn btn-outline-secondary btn-lg"><i class="bi bi-shield-lock"></i> Admin</a>
+            {% endif %}
+        </div>
+        <div class="row mt-5 g-3">
+            <div class="col-md-4">
+                <div class="card border-primary h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-graph-up-arrow text-primary fs-1"></i>
+                        <h5 class="mt-2">Resume Scoring</h5>
+                        <p class="small text-muted mb-0">Get an overall score with detailed breakdown.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-success h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-person-badge text-success fs-1"></i>
+                        <h5 class="mt-2">Job Prediction</h5>
+                        <p class="small text-muted mb-0">Discover roles that match your profile.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-warning h-100">
+                    <div class="card-body text-center">
+                        <i class="bi bi-book text-warning fs-1"></i>
+                        <h5 class="mt-2">Course Recommendations</h5>
+                        <p class="small text-muted mb-0">Find courses to upskill effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/4341/4341020.png" alt="Resume" class="img-fluid" style="max-height: 400px;">
+    </div>
+</div>
+{% endblock %}
