@@ -98,8 +98,8 @@ Admin Flow:
 ### 1. Clone the repository
 
 ```bash
-git clone <repo-url>
-cd "AI Resume"
+git clone https://github.com/Sagar-R26/AI-Resume-Analyser.git
+cd "AI Resume Analyser"
 ```
 
 ### 2. Configure MySQL
@@ -207,5 +207,5 @@ AI Resume/
 ## Author
 
 **Sagar R**
-- GitHub: [@SagarR](https://github.com/SagarR)
+- GitHub: https://github.com/Sagar-R26
 - Project: AI Resume Analyzer
