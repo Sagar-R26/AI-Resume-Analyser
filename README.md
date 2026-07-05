@@ -125,7 +125,7 @@ python -m spacy download en_core_web_sm
 
 ### 5. Replace pyresparser
 
-   Copy `pyresparser/resume_parser.py` to `venvapp\Lib\site-packages\pyresparser\` (overwrite the existing file)
+   Copy `pyresparser/resume_parser.py` to `venv\Lib\site-packages\pyresparser\` (overwrite the existing file)
 
 ### 6. Run the application
 
