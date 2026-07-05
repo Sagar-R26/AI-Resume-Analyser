@@ -4,22 +4,6 @@ An intelligent web application that parses resume information using Natural Lang
 
 ---
 
-## Project Preview
-
-### User Side
-| Main Screen | Resume Analysis |
-|:-----------:|:---------------:|
-| ![Main Screen](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/user/1-main-screen.png?raw=true) | ![Analysis](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/user/2-analysis.jpg?raw=true) |
-
-| Skill Recommendation | Course Recommendation |
-|:--------------------:|:--------------------:|
-| ![Skills](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/user/3-recom.png?raw=true) | ![Courses](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/user/4-recom.png?raw=true) |
-
-### Admin Side
-![Admin Dashboard](https://github.com/deepakpadhi986/AI-Resume-Analyzer/blob/main/screenshots/admin/2-user-data.png?raw=true)
-
----
-
 ## Features
 
 ### User Features
