@@ -100,7 +100,7 @@ Scoring Builder Mapper
 
 ```bash
 git clone https://github.com/Sagar-R26/AI-Resume-Analyser.git
-cd "AI Resume Analyser"
+cd AI-Resume-Analyser
 ```
 
 ### 2. Set up a virtual environment (recommended)
